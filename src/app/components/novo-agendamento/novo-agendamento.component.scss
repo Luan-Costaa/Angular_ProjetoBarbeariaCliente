@@ -1,0 +1,48 @@
+.container-radio-button{
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-barbeiro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  height: 50%;
+  padding: 5px;
+}
+
+.container-barbeiro img{
+  margin-bottom: 20px;
+  width: 60%;
+  border: 2px solid rgb(47, 47, 247);
+}
+.btn-proximo{
+  background-color: rgb(26, 131, 236);
+}
+ul{
+  background-color: aqua;
+  width: 100%;
+  padding: 0px;
+}
+
+li{
+  background-color: green;
+  width: 100%;
+  list-style: none;
+}
+
+mat-card{
+  width: 65vw;
+  background-color: aqua;
+}
+
+.titulo-card-servico{
+  display: flex;
+  align-items: center;
+}
+.titulo-card-servico mat-icon{
+  margin-right: 10px;
+}

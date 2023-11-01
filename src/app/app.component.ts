@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'BarbeariaCliente';
+  titulo = "Agendamentos";
+
+  alterarTituloToolbar(titulo: string){
+    this.titulo = titulo;
+  }
 }
