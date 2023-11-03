@@ -1,5 +1,4 @@
 .container-radio-button{
-  background-color: aqua;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,24 +18,21 @@
   width: 60%;
   border: 2px solid rgb(47, 47, 247);
 }
-.btn-proximo{
-  background-color: rgb(26, 131, 236);
-}
 ul{
-  background-color: aqua;
   width: 100%;
   padding: 0px;
 }
 
 li{
-  background-color: green;
   width: 100%;
   list-style: none;
+  margin-bottom: 10px;
 }
 
 mat-card{
-  width: 65vw;
-  background-color: aqua;
+  width: 68vw;
+  padding: 10px;
+  background-color: rgb(253, 250, 250);
 }
 
 .titulo-card-servico{
@@ -44,5 +40,28 @@ mat-card{
   align-items: center;
 }
 .titulo-card-servico mat-icon{
-  margin-right: 10px;
+  margin-right: 5px;
+}
+
+.container-info-servicos{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-time-money{
+  margin-top: 10px;
+  display: flex;
+  padding-top: 10px;
+  width: 50%;
+  align-items: center;
+}
+
+.container-time-money mat-icon{
+  margin-right: 5px;
+}
+
+.container-horarios-disponiveis{
+  background-color: red;
+  height: 300px;
 }

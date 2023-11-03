@@ -32,13 +32,91 @@
           <mat-checkbox color="primary">
             <mat-card>
               <mat-card-content class="titulo-card-servico">
-                <mat-icon>content_cut</mat-icon> Teste
+                <mat-icon>content_cut</mat-icon> Corte Degradê
               </mat-card-content>
 
-              desc
+              <div class="container-info-servicos">
+                <div class="container-time-money">
+                  <mat-icon>schedule</mat-icon>
+                  30 min
+                </div>
+
+                <div class="container-time-money">
+                  <mat-icon>attach_money</mat-icon>
+                  30,00
+                </div>
+              </div>
             </mat-card>
           </mat-checkbox>
         </li>
+
+        <li>
+          <mat-checkbox color="primary">
+            <mat-card>
+              <mat-card-content class="titulo-card-servico">
+                <mat-icon>content_cut</mat-icon> Corte Maquina
+              </mat-card-content>
+
+              <div class="container-info-servicos">
+                <div class="container-time-money">
+                  <mat-icon>schedule</mat-icon>
+                  20 min
+                </div>
+
+                <div class="container-time-money">
+                  <mat-icon>attach_money</mat-icon>
+                  20,00
+                </div>
+              </div>
+            </mat-card>
+          </mat-checkbox>
+        </li>
+
+        <li>
+          <mat-checkbox color="primary">
+            <mat-card>
+              <mat-card-content class="titulo-card-servico">
+                <mat-icon>content_cut</mat-icon> Barba
+              </mat-card-content>
+
+              <div class="container-info-servicos">
+                <div class="container-time-money">
+                  <mat-icon>schedule</mat-icon>
+                  20 min
+                </div>
+
+                <div class="container-time-money">
+                  <mat-icon>attach_money</mat-icon>
+                  15,00
+                </div>
+              </div>
+            </mat-card>
+          </mat-checkbox>
+        </li>
+
+        <li>
+          <mat-checkbox color="primary">
+            <mat-card>
+              <mat-card-content class="titulo-card-servico">
+                <mat-icon>content_cut</mat-icon> Progressiva
+              </mat-card-content>
+
+              <div class="container-info-servicos">
+                <div class="container-time-money">
+                  <mat-icon>schedule</mat-icon>
+                  1:30h
+                </div>
+
+                <div class="container-time-money">
+                  <mat-icon>attach_money</mat-icon>
+                  90,00
+                </div>
+              </div>
+            </mat-card>
+          </mat-checkbox>
+        </li>
+
+
       </ul>
 
       <div>
@@ -48,8 +126,10 @@
     </form>
   </mat-step>
   <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    <p>You are now done.</p>
+    <ng-template matStepLabel>Horario</ng-template>
+    <div class="container-horarios-disponiveis">
+      teste
+    </div>
     <div>
       <button mat-button matStepperPrevious>Back</button>
       <button mat-button (click)="stepper.reset()">Reset</button>
