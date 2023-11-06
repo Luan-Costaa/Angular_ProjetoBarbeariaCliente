@@ -1,0 +1,10 @@
+# Defina as configurações gerais do build
+[build]
+  command = "ng build --prod"  # Comando para construir a aplicação Angular
+  publish = "dist/your-app"    # Diretório de saída após o build
+
+# Configuração de redirecionamento SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
