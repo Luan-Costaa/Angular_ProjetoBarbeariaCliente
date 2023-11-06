@@ -61,7 +61,57 @@ mat-card{
   margin-right: 5px;
 }
 
-.container-horarios-disponiveis{
-  background-color: red;
-  height: 300px;
+.containerHorario{
+  width: 85vw;;
+  display: flex;
+  justify-content: space-between;
+  align-items: center ;
+}
+
+.containerInputDate{
+  margin-left: 15px;
+  width: 60%;
+}
+
+.containerListHorariosDisponiveis{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.containerDataHoraDisponivel{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.container-info-hora-disponivel{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-info-hora-disponivel div{
+  padding: 5px;
+  width: 50%;
+}
+
+.container-info-hora-disponivel div span{
+  font-size: 1.2em;
+  margin-top: 3px;
+  padding: 5px;
+}
+
+.containerListHorariosDisponiveis mat-card{
+  padding: 3px 8px;
+  width: 80vw;
+  margin-bottom: 10px;
+  background-color: rgb(191, 245, 191);
+}
+.containerListHorariosDisponiveis mat-card mat-card-content{
+  padding: 8px 5px;
+}
+
+.horaDisponivel{
+  text-align: end;
+  font-size: 2em;
 }

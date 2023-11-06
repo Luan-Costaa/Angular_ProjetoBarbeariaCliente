@@ -115,8 +115,6 @@
             </mat-card>
           </mat-checkbox>
         </li>
-
-
       </ul>
 
       <div>
@@ -126,13 +124,102 @@
     </form>
   </mat-step>
   <mat-step>
-    <ng-template matStepLabel>Horario</ng-template>
-    <div class="container-horarios-disponiveis">
-      teste
+    <ng-template matStepLabel>Selecione o Horario</ng-template>
+
+    <div class="containerHorario">
+      <h3>{{diaSemana}}</h3>
+      <mat-form-field class="containerInputDate">
+        <input matInput  [matDatepicker]="picker" placeholder="Escolha uma data"
+          (dateChange)="updateDayOfWeek($event.value)" [value]="dataAgenda">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
     </div>
+
+    <div class="containerListHorariosDisponiveis">
+      <mat-card (click)="alertaTeste()">
+        <mat-card-content>Disponivel</mat-card-content>
+        <div class="container-info-hora-disponivel">
+
+          <div class="containerDataHoraDisponivel">
+            <span>
+              Segunda-Feira
+            </span>
+            <span>
+              15/10/2023
+            </span>
+          </div>
+
+          <div class="horaDisponivel">
+            08:00
+          </div>
+
+        </div>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-content>Disponivel</mat-card-content>
+        <div class="container-info-hora-disponivel">
+
+          <div class="containerDataHoraDisponivel">
+            <span>
+              Segunda-Feira
+            </span>
+            <span>
+              15/10/2023
+            </span>
+          </div>
+
+          <div class="horaDisponivel">
+            09:00
+          </div>
+
+        </div>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-content>Disponivel</mat-card-content>
+        <div class="container-info-hora-disponivel">
+
+          <div class="containerDataHoraDisponivel">
+            <span>
+              Segunda-Feira
+            </span>
+            <span>
+              15/10/2023
+            </span>
+          </div>
+
+          <div class="horaDisponivel">
+            10:00
+          </div>
+
+        </div>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-content>Disponivel</mat-card-content>
+        <div class="container-info-hora-disponivel">
+
+          <div class="containerDataHoraDisponivel">
+            <span>
+              Segunda-Feira
+            </span>
+            <span>
+              15/10/2023
+            </span>
+          </div>
+
+          <div class="horaDisponivel">
+            10:30
+          </div>
+
+        </div>
+      </mat-card>
+    </div>
+
     <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
+      <button mat-button matStepperPrevious>Voltar</button>
     </div>
   </mat-step>
 </mat-stepper>
