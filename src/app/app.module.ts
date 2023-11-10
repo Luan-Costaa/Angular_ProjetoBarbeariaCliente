@@ -7,12 +7,15 @@ import { AppMaterialModule } from './AppMaterial/app-material/app-material.modul
 import { MatButtonModule } from '@angular/material/button';
 import { NovoAgendamentoComponent } from './components/novo-agendamento/novo-agendamento.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { ReactiveFormsModule } from '@angular/forms'; // Importe o ReactiveFormsModule
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { MinhaContaComponent } from './components/minha-conta/minha-conta.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NovoAgendamentoComponent
+    NovoAgendamentoComponent,
+    MinhaContaComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,8 @@ import { ReactiveFormsModule } from '@angular/forms'; // Importe o ReactiveForms
     AppMaterialModule,
     MatButtonModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
