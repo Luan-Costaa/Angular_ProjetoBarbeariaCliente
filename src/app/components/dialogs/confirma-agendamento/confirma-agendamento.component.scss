@@ -1,0 +1,105 @@
+.dialog-container{
+  width: 100%;
+}
+
+.container-agendamentos{
+  width: 100vw;
+}
+
+.container-data-hora{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-data{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 60%;
+}
+
+.container-data div{
+  padding: 5px;
+}
+
+.container-hora{
+  width: 40%;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.container-info-servicos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-list-service{
+  padding: 5px 10px;
+}
+
+.container-list-service ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 0px;
+}
+.container-list-service li {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+}
+
+.container-detalhe-servicos{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container-valor-item{
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+
+.container-valor-tempo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-valor-tempo .container-valor{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.container-valor-tempo div{
+  width: 100%;
+  text-align: center;
+  padding: 2px 2px;
+  margin-left: 5px;
+}
+
+.container-tempo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-valor-item span{
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.container-time{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}

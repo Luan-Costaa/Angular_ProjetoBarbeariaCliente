@@ -24,4 +24,13 @@ export class AgendamentoServiceService {
       {id:"4", nome:"Progressiva", valor:"90.00", tempo:"01:30"}
     ]
   }
+
+  buscarHorariosDisponiveis(dataAgenda: Date){
+    return[
+      {id: "2", hora: "08:00", disponivel: true},
+      {id: "3", hora: "09:00", disponivel: true},
+      {id: "4", hora: "10:00", disponivel: true},
+      {id: "5", hora: "15:00", disponivel: true},
+    ]
+  }
 }

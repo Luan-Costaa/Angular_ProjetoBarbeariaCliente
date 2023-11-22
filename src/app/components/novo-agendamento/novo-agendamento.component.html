@@ -4,7 +4,7 @@
 
       <mat-radio-group class="container-radio-button" [(ngModel)]="idBarbeiro">
 
-        <mat-radio-button *ngFor="let barbeiro of barbeiros" [value]="barbeiro.id">
+        <mat-radio-button *ngFor="let barbeiro of barbeiros" [value]="barbeiro" >
           <div class="container-barbeiro">
             <img [src]="barbeiro.imgSrc" class="rounded-circle img-responsive">
             <p>{{ barbeiro.nome }}</p>
@@ -23,7 +23,7 @@
       <ng-template matStepLabel>Selecione os Serviços</ng-template>
       <ul  [formGroup]="servicosSelecionados">
         <li *ngFor="let servico of servicos">
-          <mat-checkbox color="primary" [formControlName]="servico.nome" name="servico">
+          <mat-checkbox color="primary" [formControlName]="servico.id" name="servico">
             <mat-card >
               <mat-card-content class="titulo-card-servico">
                 <mat-icon>content_cut</mat-icon>{{servico.nome}}
@@ -47,7 +47,7 @@
 
       <div>
         <button mat-button matStepperPrevious>Voltar</button>
-        <button mat-button matStepperNext class="btn-proximo" (click)="teste()">Proximo</button>
+        <button mat-button matStepperNext class="btn-proximo">Proximo</button>
       </div>
 
   </mat-step>
@@ -58,92 +58,38 @@
       <h3>{{diaSemana}}</h3>
       <mat-form-field class="containerInputDate">
         <input matInput  [matDatepicker]="picker" placeholder="Escolha uma data"
-          (dateChange)="updateDayOfWeek($event.value)" [value]="dataAgenda">
+          (dateChange)="listarHorarios($event.value)" [value]="dataAgenda" [min]="hoje">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
     </div>
 
     <div class="containerListHorariosDisponiveis">
-      <mat-card (click)="alertaTeste()">
+      <div class="container-info-lista-fazia" *ngIf="!(horariosDisponiveis && horariosDisponiveis.length > 0)">
+        Não temos horarios para esse dia.
+      </div>
+
+      <mat-card *ngFor="let horario of horariosDisponiveis" (click)="openDialog(horario)">
         <mat-card-content>Disponivel</mat-card-content>
         <div class="container-info-hora-disponivel">
 
-          <div class="containerDataHoraDisponivel">
+          <div  class="containerDataHoraDisponivel">
             <span>
-              Segunda-Feira
+              {{diaSemana}}
             </span>
             <span>
-              15/10/2023
+              {{dataFormatada}}
             </span>
           </div>
 
           <div class="horaDisponivel">
-            08:00
+            {{horario.hora}}
           </div>
 
         </div>
       </mat-card>
 
-      <mat-card>
-        <mat-card-content>Disponivel</mat-card-content>
-        <div class="container-info-hora-disponivel">
 
-          <div class="containerDataHoraDisponivel">
-            <span>
-              Segunda-Feira
-            </span>
-            <span>
-              15/10/2023
-            </span>
-          </div>
-
-          <div class="horaDisponivel">
-            09:00
-          </div>
-
-        </div>
-      </mat-card>
-
-      <mat-card>
-        <mat-card-content>Disponivel</mat-card-content>
-        <div class="container-info-hora-disponivel">
-
-          <div class="containerDataHoraDisponivel">
-            <span>
-              Segunda-Feira
-            </span>
-            <span>
-              15/10/2023
-            </span>
-          </div>
-
-          <div class="horaDisponivel">
-            10:00
-          </div>
-
-        </div>
-      </mat-card>
-
-      <mat-card>
-        <mat-card-content>Disponivel</mat-card-content>
-        <div class="container-info-hora-disponivel">
-
-          <div class="containerDataHoraDisponivel">
-            <span>
-              Segunda-Feira
-            </span>
-            <span>
-              15/10/2023
-            </span>
-          </div>
-
-          <div class="horaDisponivel">
-            10:30
-          </div>
-
-        </div>
-      </mat-card>
     </div>
 
     <div>

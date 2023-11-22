@@ -3,7 +3,7 @@
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button  routerLink="agendamentos" mat-menu-item (click)="alterarTituloToolbar('Agendamentos')">
+    <button  routerLink="agendamentos" routerLink="agendamentos"  mat-menu-item (click)="alterarTituloToolbar('Agendamentos')">
       <mat-icon color="">calendar_month</mat-icon>
       <span>Agendamentos</span>
     </button>
@@ -11,7 +11,7 @@
       <mat-icon style="color: green;">add</mat-icon>
       <span>Novo Agendamento</span>
     </button>
-    <button mat-menu-item (click)="alterarTituloToolbar('Minha Conta')">
+    <button mat-menu-item routerLink="minha-conta"  (click)="alterarTituloToolbar('Minha Conta')">
       <mat-icon color="primary">person</mat-icon>
       <span>Minha Conta</span>
     </button>

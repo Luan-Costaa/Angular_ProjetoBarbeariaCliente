@@ -11,6 +11,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {FormsModule} from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   exports: [
@@ -25,7 +26,8 @@ import {FormsModule} from '@angular/forms';
     MatCardModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ]
 })
 export class AppMaterialModule { }

@@ -1,0 +1,64 @@
+<div class="dialog-container">
+  <h2 mat-dialog-title>Confirmar Agendamento</h2>
+  <mat-dialog-content class="mat-typography">
+    <mat-card>
+      <mat-card-header>
+        <h2>Barbeiro: Ademilson</h2>
+      </mat-card-header>
+      <div class="container-info-agendamento">
+        <div class="container-data-hora">
+          <div class="container-data">
+            <div class="container-dia-da-semana">Segunda-Feira</div>
+            <div class="container-data-agendanda">25/10/2023</div>
+          </div>
+
+          <div class="container-hora">08:00</div>
+        </div>
+
+        <div class="container-info-servicos">
+          <div class="container-list-service">
+            <ul>
+              <li>
+                <mat-icon style="margin-right: 5px">content_cut</mat-icon>
+                <div class="container-detalhe-servicos">
+                  <div>Corte degradê</div>
+
+                  <div class="container-valor-item"><span>R$</span> 25,00</div>
+                </div>
+              </li>
+
+              <li>
+                <mat-icon style="margin-right: 5px">content_cut</mat-icon>
+                <div class="container-detalhe-servicos">
+                  <div>Barba</div>
+
+                  <div class="container-valor-item"><span>R$</span> 15,00</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="container-valor-tempo">
+            <div class="container-valor">
+              <div>Valor Total</div>
+              <div>R$ 40,00</div>
+            </div>
+
+            <div class="container-tempo">
+              <div class="container-time">
+                <mat-icon style="margin-right: 3px">schedule</mat-icon>
+                50 min
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>
+      Confirmar
+    </button>
+  </mat-dialog-actions>
+</div>

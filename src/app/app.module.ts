@@ -10,12 +10,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { MinhaContaComponent } from './components/minha-conta/minha-conta.component';
+import { AgendamentosComponent } from './components/agendamentos/agendamentos.component';
+import { ConfirmaAgendamentoComponent } from './components/dialogs/confirma-agendamento/confirma-agendamento.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NovoAgendamentoComponent,
-    MinhaContaComponent
+    MinhaContaComponent,
+    AgendamentosComponent,
+    ConfirmaAgendamentoComponent
   ],
   imports: [
     BrowserModule,
