@@ -3,53 +3,51 @@
   <mat-dialog-content class="mat-typography">
     <mat-card>
       <mat-card-header>
-        <h2>Barbeiro: Ademilson</h2>
+        <h2><span class="destaque">Barbeiro: </span> {{data.cabeleireiro.nome}}</h2>
       </mat-card-header>
       <div class="container-info-agendamento">
         <div class="container-data-hora">
           <div class="container-data">
-            <div class="container-dia-da-semana">Segunda-Feira</div>
-            <div class="container-data-agendanda">25/10/2023</div>
+            <div class="container-dia-da-semana destaque">{{dataSemana}}</div>
+            <div class="container-data-agendanda">{{dataFormatada}}</div>
           </div>
 
-          <div class="container-hora">08:00</div>
+          <div class="container-hora destaque">{{data.horario.hora}}<span>h</span></div>
         </div>
 
         <div class="container-info-servicos">
           <div class="container-list-service">
             <ul>
-              <li>
+              <li *ngFor="let servico of data.servicos">
                 <mat-icon style="margin-right: 5px">content_cut</mat-icon>
                 <div class="container-detalhe-servicos">
-                  <div>Corte degradê</div>
+                  <div>{{servico.nome}}</div>
 
-                  <div class="container-valor-item"><span>R$</span> 25,00</div>
+                  <div class="container-valor-item"><span>R$</span>{{servico.valor}}</div>
                 </div>
               </li>
 
-              <li>
-                <mat-icon style="margin-right: 5px">content_cut</mat-icon>
-                <div class="container-detalhe-servicos">
-                  <div>Barba</div>
-
-                  <div class="container-valor-item"><span>R$</span> 15,00</div>
-                </div>
-              </li>
+              
             </ul>
           </div>
 
           <div class="container-valor-tempo">
             <div class="container-valor">
-              <div>Valor Total</div>
-              <div>R$ 40,00</div>
+              <div class="destaque">Valor Total</div>
+              <div>R$ {{data.totalServicos()}},00</div>
             </div>
 
-            <div class="container-tempo">
+            <div class="container-valor">
+              <div class="destaque">Tempo Total</div>
               <div class="container-time">
-                <mat-icon style="margin-right: 3px">schedule</mat-icon>
-                50 min
-              </div>
+                <mat-icon style="margin-right: 3px;">schedule</mat-icon>
+                0{{data.totalTempoServicos()}} hrs</div>
             </div>
+
+          </div>
+
+          <div>
+            <div><span class="destaque">Tel: </span> {{telFormatado}} </div>
           </div>
         </div>
       </div>
@@ -57,7 +55,7 @@
   </mat-dialog-content>
   <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>
+    <button mat-button [mat-dialog-close]="false" cdkFocusInitial (click)="confirmarAgendamento()">
       Confirmar
     </button>
   </mat-dialog-actions>

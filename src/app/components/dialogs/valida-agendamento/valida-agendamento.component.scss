@@ -1,0 +1,19 @@
+.conatiner-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.conatiner-info div{
+    padding: 10px;
+    color: green;
+}
+
+.conatiner-info mat-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    font-size: 4em;
+}

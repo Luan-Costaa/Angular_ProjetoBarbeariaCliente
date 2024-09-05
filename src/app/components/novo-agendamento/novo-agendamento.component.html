@@ -1,5 +1,28 @@
 <mat-stepper orientation="vertical"  #stepper>
-  <mat-step >
+  <mat-step>
+    <ng-template matStepLabel>Insira seus Dados</ng-template>
+
+    <form class="example-form">
+      <div class="container-input">
+        <mat-form-field class="example-full-width">
+          <mat-label>Nome</mat-label>
+          <input type="text" matInput maxlength="256" required [formControl]="clienteNomeFormControl" placeholder="Digite seu nome">
+        </mat-form-field>
+      
+        <mat-form-field class="example-full-width">
+          <mat-label>Telefone</mat-label>
+          <input type="tel" [formControl]="clienteTelefoneFormControl" required matInput placeholder="(00) 0 0000-0000" mask="(00) 0 0000-0000">
+        </mat-form-field>
+      </div>
+    
+      <div>
+        <button mat-button [disabled]="!formIsValid()" matStepperNext class="btn-proximo">Proximo</button>
+      </div>
+    </form>
+    
+  </mat-step>
+  
+  <mat-step [editable]="false">
       <ng-template matStepLabel>Selecione o Barbeiro</ng-template>
 
       <mat-radio-group class="container-radio-button" [(ngModel)]="idBarbeiro">
@@ -13,6 +36,7 @@
 
       </mat-radio-group>
       <div>
+        <button mat-button matStepperPrevious>Voltar</button>
         <button mat-button matStepperNext class="btn-proximo">Proximo</button>
       </div>
   </mat-step>
@@ -69,24 +93,27 @@
         Não temos horarios para esse dia.
       </div>
 
-      <mat-card *ngFor="let horario of horariosDisponiveis" (click)="openDialog(horario)">
-        <mat-card-content>Disponivel</mat-card-content>
-        <div class="container-info-hora-disponivel">
+      <mat-card *ngFor="let horario of horariosDisponiveis" (click)="setHorario(horario)">
+        <mat-card-content (click)="openDialog(horario)">
+          Disponivel
+          <div class="container-info-hora-disponivel">
 
-          <div  class="containerDataHoraDisponivel">
-            <span>
-              {{diaSemana}}
-            </span>
-            <span>
-              {{dataFormatada}}
-            </span>
+            <div  class="containerDataHoraDisponivel">
+              <span>
+                {{diaSemana}}
+              </span>
+              <span>
+                {{dataFormatada}}
+              </span>
+            </div>
+  
+            <div class="horaDisponivel">
+              {{horario.hora}}
+            </div>
+  
           </div>
-
-          <div class="horaDisponivel">
-            {{horario.hora}}
-          </div>
-
-        </div>
+        </mat-card-content>
+        
       </mat-card>
 
 
@@ -94,6 +121,10 @@
 
     <div>
       <button mat-button matStepperPrevious>Voltar</button>
+      <button mat-button matStepperNext class="btn-proximo">Proximo</button>
     </div>
   </mat-step>
+
+
+  
 </mat-stepper>

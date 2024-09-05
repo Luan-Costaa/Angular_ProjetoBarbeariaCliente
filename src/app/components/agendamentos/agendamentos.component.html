@@ -1,6 +1,6 @@
 <div class="container-fluid container-agendamentos">
   <div class="container-agendamentos-list">
-    <mat-card>
+    <mat-card *ngFor="let agendamento of agendamentos">
       <mat-card-header>
         <h2>Barbeiro: Ademilson</h2>
       </mat-card-header>
@@ -8,7 +8,7 @@
         <div class="container-data-hora">
           <div class="container-data">
             <div class="container-dia-da-semana">
-              Segunda-Feira
+              {{agendamento}}
             </div>
             <div class="container-data-agendanda">
               25/10/2023

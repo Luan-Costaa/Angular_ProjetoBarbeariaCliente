@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { MinhaContaComponent } from './components/minha-conta/minha-conta.component';
 import { AgendamentosComponent } from './components/agendamentos/agendamentos.component';
 import { ConfirmaAgendamentoComponent } from './components/dialogs/confirma-agendamento/confirma-agendamento.component';
+import { NgxMaskModule} from 'ngx-mask';
+import { ValidaAgendamentoComponent } from './components/dialogs/valida-agendamento/valida-agendamento.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { ConfirmaAgendamentoComponent } from './components/dialogs/confirma-agen
     NovoAgendamentoComponent,
     MinhaContaComponent,
     AgendamentosComponent,
-    ConfirmaAgendamentoComponent
+    ConfirmaAgendamentoComponent,
+    ValidaAgendamentoComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { ConfirmaAgendamentoComponent } from './components/dialogs/confirma-agen
     MatButtonModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

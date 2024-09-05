@@ -24,6 +24,14 @@ export class NovoAgendamentoComponent {
   barbeiros: Barbeiro[];
   horariosDisponiveis: Horario[] = [];
 
+  horario: Horario = new Horario;
+
+  clienteNomeFormControl = new FormControl('', [Validators.required]);
+  clienteTelefoneFormControl = new FormControl('', [Validators.required]);
+
+  formIsValid() {
+    return this.clienteNomeFormControl.valid && this.clienteTelefoneFormControl.valid;
+  }
 
   dataFormatada: string = this.formatarData(new Date)
   dataAgenda: Date = new Date;
@@ -86,11 +94,14 @@ export class NovoAgendamentoComponent {
     agendamento.cabeleireiro = this.idBarbeiro;
     agendamento.dataAgendamento = this.dataAgenda;
     agendamento.horario = horario;
-    //agendamento.servicos = this.listarServicosSelecionados();
-    this.listarServicosSelecionados();
+    agendamento.nome = this.clienteNomeFormControl.value;
+    agendamento.telefone = this.clienteTelefoneFormControl.value;
+
+    agendamento.servicos = this.listarServicosSelecionados()
+
 
     const dialogRef = this.dialog.open(ConfirmaAgendamentoComponent, {
-      data: {nome:"Luan"}
+      data: agendamento
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -101,16 +112,16 @@ export class NovoAgendamentoComponent {
   listarServicosSelecionados() {
     let idsSelecionados = this.filtrarServicosSelecionados();
 
-    let servicos = [];
+    let servicos: Servico[] = [];
 
     for( let i in idsSelecionados){
       for(let j in this.servicos){
         if(parseInt(this.servicos[j].id) == idsSelecionados[i]){
-          console.log(this.servicos[j]);
+          servicos.push(this.servicos[j]);
         }
       }
     }
-    return idsSelecionados;
+    return servicos;
   }
 
   filtrarServicosSelecionados(){
@@ -124,6 +135,10 @@ export class NovoAgendamentoComponent {
     }
 
     return idsSelecionados;
+  }
+
+  setHorario(horario: Horario){
+    this.horario = horario;
   }
 
 
