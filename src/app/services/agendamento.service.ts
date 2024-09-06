@@ -18,8 +18,6 @@ export class AgendamentoServiceService {
 
   buscarBarbeiros(){
     return [
-
-
       {id:"2", nome:"Ademilson", imgSrc:"../../../assets/images/barbeiro.jpg"},
       {id:"2", nome:"Matheus", imgSrc:"../../../assets/images/barbeiro.jpg"},
       {id:"2", nome:"Benailson", imgSrc:"../../../assets/images/barbeiro.jpg"}

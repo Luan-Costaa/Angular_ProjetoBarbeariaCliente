@@ -54,7 +54,7 @@ export class NovoAgendamentoComponent {
     this.servicos = agendamentoService.buscarServicos();
 
     this.servicosSelecionados = this._formBuilder.group(this.buildServicos());
-
+    //this.openDialog(new Horario)
 
   }
 
@@ -101,6 +101,11 @@ export class NovoAgendamentoComponent {
 
 
     const dialogRef = this.dialog.open(ConfirmaAgendamentoComponent, {
+      width: '100vw',
+      maxWidth: '100vw',
+      //height: '100vh',
+      maxHeight: '100vh',
+      panelClass: 'full-screen-dialog',
       data: agendamento
     });
 

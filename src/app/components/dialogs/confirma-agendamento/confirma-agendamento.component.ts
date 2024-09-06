@@ -4,6 +4,7 @@ import { Agendamento } from 'src/app/model/domain/Agendamento';
 import { Servico } from 'src/app/model/domain/Servico';
 import { AgendamentoServiceService } from 'src/app/services/agendamento.service';
 import { ValidaAgendamentoComponent } from '../valida-agendamento/valida-agendamento.component';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-confirma-agendamento',
@@ -14,7 +15,8 @@ export class ConfirmaAgendamentoComponent {
   constructor(public dialogRef: MatDialogRef<ConfirmaAgendamentoComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Agendamento,
     private agendamentoService: AgendamentoServiceService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private router: Router
     ){
       
     
@@ -60,6 +62,13 @@ export class ConfirmaAgendamentoComponent {
       const dialogRef = this.dialog.open(ValidaAgendamentoComponent, {
         data: this.dataFormatada
       })
+
+      // Ouvir o fechamento do diálogo
+      dialogRef.afterClosed().subscribe(result => {
+        if (result === true) { // Se o botão "Visualizar" foi clicado
+          this.router.navigate(['/agendamentos']); // Redirecionar para /agendamentos
+        }
+      });
     }
     
 }
