@@ -9,20 +9,22 @@ import { NovoAgendamentoComponent } from './components/novo-agendamento/novo-age
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-import { MinhaContaComponent } from './components/minha-conta/minha-conta.component';
 import { AgendamentosComponent } from './components/agendamentos/agendamentos.component';
 import { ConfirmaAgendamentoComponent } from './components/dialogs/confirma-agendamento/confirma-agendamento.component';
 import { NgxMaskModule} from 'ngx-mask';
 import { ValidaAgendamentoComponent } from './components/dialogs/valida-agendamento/valida-agendamento.component';
+import { AlertErrorComponent } from './components/dialogs/alert-error/alert-error.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NovoAgendamentoComponent,
-    MinhaContaComponent,
     AgendamentosComponent,
     ConfirmaAgendamentoComponent,
-    ValidaAgendamentoComponent
+    ValidaAgendamentoComponent,
+    AlertErrorComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,

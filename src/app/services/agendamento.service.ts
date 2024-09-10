@@ -13,7 +13,6 @@ export class AgendamentoServiceService {
 
   adicionarAgendamento(agendamento: Agendamento){
     this.agendamentos.push(agendamento)
-    //location.assign("/agendamentos")
   }
 
   buscarBarbeiros(){
@@ -62,5 +61,10 @@ export class AgendamentoServiceService {
       {id: "4", hora: "10:00", disponivel: true},
       {id: "5", hora: "15:00", disponivel: true},
     ]
+  }
+  
+
+  buscarAgendamentoPorTelefone(telefone : string){
+    return this.agendamentos.filter((agendamento) => agendamento.telefone == telefone);
   }
 }

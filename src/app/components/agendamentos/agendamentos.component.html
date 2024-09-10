@@ -1,4 +1,16 @@
 <div class="container-fluid container-agendamentos">
+
+  <div class="container_form_get" *ngIf="agendamentos.length == 0">
+    <h2>Consultar Agendamentos</h2>
+    <div class="container-input">     
+      <mat-form-field class="example-full-width">
+        <mat-label>Telefone</mat-label>
+        <input type="tel" [formControl]="clienteTelefoneFormControl" required matInput placeholder="(00) 0 0000-0000" mask="(00) 0 0000-0000">
+      </mat-form-field>
+    </div>
+    <button class="btn btn-primary" (click)="buscar_agendamentos()">Consultar</button>   
+  </div>
+
   <div class="container-agendamentos-list">
     <mat-card *ngFor="let agendamento of agendamentos">
       <mat-card-header>
